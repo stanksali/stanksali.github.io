@@ -378,8 +378,7 @@ mark.kw { color: inherit; font-weight: inherit; background: none; padding: 0; }
 .voice__avatar { flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 15px; color: var(--accent-ink); background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
 .voice__name { font-weight: 600; }
 .voice__role { font-size: 13.5px; color: var(--muted); line-height: 1.4; }
-.voice__src { margin-left: auto; font-size: 13px; color: var(--accent); white-space: nowrap; }
-.voice__src:hover, .link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.link:hover { text-decoration: underline; text-underline-offset: 3px; }
 .link { color: var(--accent); }
 .voices__nav { display: flex; align-items: center; gap: 16px; margin-top: 26px; }
 .icon-btn { width: 50px; height: 50px; border-radius: 50%; border: 1px solid var(--line-2); font-size: 18px; transition: background 0.3s, border-color 0.3s; }
@@ -457,7 +456,6 @@ mark.kw { color: inherit; font-weight: inherit; background: none; padding: 0; }
   .hero { padding-top: 24px; }
   .marquee { margin-top: 74px; padding: 12px 0; }
   .hobbies { grid-template-columns: repeat(2, 1fr); }
-  .voice__src { margin-left: 58px; }
   body { font-size: 16px; }
   .stats { grid-template-columns: 1fr 1fr; gap: 10px; }
   .stat { padding: 20px 18px; }

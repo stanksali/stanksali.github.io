@@ -9,7 +9,6 @@
 
   /* ---------- Recommendations (rendered with textContent, never innerHTML) ---------- */
   // Source: LinkedIn recommendations received (text verbatim; `highlight` is a short pull-quote from the same text).
-  const RECS_URL = "https://www.linkedin.com/in/swarangtanksali/details/recommendations/";
   const RECOMMENDATIONS = [
     {
       name: "Maansi Sanghi",
@@ -382,14 +381,6 @@
         who.appendChild(rel);
       }
       cap.append(av, who);
-      const src = document.createElement("a");
-      src.className = "voice__src";
-      src.href = RECS_URL;
-      src.target = "_blank";
-      src.rel = "noopener noreferrer";
-      src.textContent = "View on LinkedIn ↗";
-      src.setAttribute("aria-label", `View ${rec.name}'s recommendation on LinkedIn`);
-      cap.appendChild(src);
       fig.appendChild(cap);
       track.appendChild(fig);
 
