@@ -8,49 +8,44 @@
   const finePointer = window.matchMedia("(pointer: fine)").matches;
 
   /* ---------- Recommendations (rendered with textContent, never innerHTML) ---------- */
-  // Source: LinkedIn recommendations received (text verbatim; `highlight` is a short pull-quote from the same text).
+  // Source: LinkedIn recommendations received. Every string below is copied exactly as shown on LinkedIn
+  // (including its punctuation). Do not edit or tidy the wording.
   const RECOMMENDATIONS = [
     {
       name: "Maansi Sanghi",
-      role: "Founder, Envizon · Fractional CMO & GTM Leader for B2B SaaS",
-      relation: "Worked with Swarang on the same team",
-      highlight: "Swarang brought in structure and clarity.",
+      role: "Founder, Envizon | Fractional CMO & GTM Leader for B2B SaaS",
+      relation: "September 5, 2025, Maansi worked with Swarang on the same team",
       text: "I had the pleasure of working with Swarang, and he has been a fantastic colleague. In marketing, he took the time to understand SaaS nuances and worked out what was best for the company while aligning with marketing requirements.\n\nOn the finance side, Swarang brought in structure and clarity—whether it was budgeting, accounting, or tools expense management. He brought in better visibility and management. His efforts ensured smoother processes and more informed decision-making across the board.\n\nBeyond work, Swarang is intelligent, trustworthy, and a genuinely fun colleague to have around. He is accountable, always willing to help, and brings positive energy to the team.",
     },
     {
       name: "Maharshi Vyas",
-      role: "Head, PrimeServ STG Business",
-      relation: "Worked with Swarang at Howden",
-      highlight: "A catalyst to grow business.",
+      role: "Head - PrimeServ STG Business",
+      relation: "August 29, 2025, Maharshi worked with Swarang on the same team",
       text: "Swarang is a highly competent, process driven and smart finance professional with whom I had pleasure of working at Howden. He blends his finance knowledge and acts as a catalyst to grow business while collaborating with multiple disciplines successfully. His attitude of taking ownership and providing accurate details has been his forte. His team thrives under his open and structured leadership style. I can confidently recommend Swarang to any organization who is looking for a leader who has micro as well macro understanding of the paradigm. I wish him the best in his future endeavors.",
     },
     {
-      name: "Shirish Uplenchwar",
-      role: "Business Development Director – India, Energy Dome · Independent Director",
-      relation: "Managed Swarang directly",
-      highlight: "An exceptional communicator with excellent analytical and problem-solving skills.",
-      text: "I have had the opportunity to analyze Swarang's skills and qualifications, and I can confidently say that he is a talented and dedicated professional who would be a valuable asset to any organisation.\n\nSwarang is an exceptional communicator with excellent analytical and problem-solving skills. He is always willing to go the extra mile to ensure that tasks are completed to the highest standards, and his attention to detail is unparalleled. Additionally, he is a quick learner and is always eager to acquire new knowledge and skills.\n\nSwarang's passion for his work is contagious, and his positive attitude and friendly demeanor make him a joy to work with. He is an excellent team player who is always willing to collaborate and contribute to the success of the group.",
-    },
-    {
       name: "Aloke Sharma",
-      role: "Vice President, Corporate Finance · Blackstone-backed EPL",
-      relation: "Managed Swarang directly at Magna",
-      highlight: "Approaches tasks from different angles to get to the solution.",
+      role: "Vice President-Corporate Finance at Blackstone backed EPL",
+      relation: "March 18, 2023, Aloke managed Swarang directly",
       text: "Had the chance to work with Swarang directly at Magna, the thing that stood out for me was his commitment to work and the willingness to learn. Have seen him over the years growing as an individual and a performer. The individuality resounds in having the point of view and approaching tasks from different angles to get to the solution. All the best Swarang",
     },
     {
+      name: "Shirish Uplenchwar",
+      role: "Business Leader | Business Development Director – India, Energy Dome | P&L & Market Expansion across Long Duration Energy Storage, Renewables, Oil & Gas & Manufacturing | Independent Director",
+      relation: "March 9, 2023, Shirish managed Swarang directly",
+      text: "I have had the opportunity to analyze Swarang's skills and qualifications, and I can confidently say that he is a talented and dedicated professional who would be a valuable asset to any organisation.\n\nSwarang is an exceptional communicator with excellent analytical and problem-solving skills. He is always willing to go the extra mile to ensure that tasks are completed to the highest standards, and his attention to detail is unparalleled. Additionally, he is a quick learner and is always eager to acquire new knowledge and skills.\n\nSwarang's passion for his work is contagious, and his positive attitude and friendly demeanor make him a joy to work with. He is an excellent team player who is always willing to collaborate and contribute to the success of the group.",
+    },
+    {
       name: "Yayati Jawale",
-      role: "Senior Vice President, Citi",
-      relation: "Managed Swarang directly",
-      highlight: "A go-getter, always ready to jump into action.",
+      role: "Senior Vice President at Citi",
+      relation: "March 8, 2023, Yayati managed Swarang directly",
       text: "Swarang is a great person to work with, a go getter always ready to jump in to action. Good team player always willing to help others.",
     },
     {
       name: "Puneet Jain",
-      role: "Finance Director, Vegrow · Strategic Finance Leader",
-      relation: "Senior colleague",
-      highlight: "A perpetual optimist with an eye for detail.",
-      text: "Swarang is a dedicated professional having an eye for detail. Always open for taking up new challenges, goes that extra mile to help others to achieve the deadlines. Believes in team work and guides the team to perform the task accurately. Having an inquisitive mindset and excellent probing skills enables him to improve his learning curve on an ongoing basis. A perpetual optimist and self motivated personality makes him an asset of your team.",
+      role: "Finance Director - Vegrow • Strategic Finance Leader • Chartered Accountant (1st Attempt)",
+      relation: "October 17, 2020, Puneet was senior to Swarang but didn’t manage Swarang directly",
+      text: "Swarang is a dedicated professional having an eye for detail. Always open for taking up new challenges, goes that extra mile to help others to achieve the deadlines. Believes in team work and guides the team to perform the task accurately.. Having an inquisitive mindset and excellent probing skills enables him to improve his learning curve on an ongoing basis. A perpetual optimist and self motivated personality makes him an asset of your team.",
     },
   ];
 
@@ -347,9 +342,6 @@
       fig.className = "voice spot";
       const q = document.createElement("div");
       q.className = "voice__q"; q.textContent = "“"; q.setAttribute("aria-hidden", "true");
-      const hl = document.createElement("p");
-      hl.className = "voice__hl";
-      hl.textContent = rec.highlight || "";
       const bq = document.createElement("blockquote");
       String(rec.text).split(/\n{2,}/).forEach((para) => {
         const p = document.createElement("p");
@@ -357,7 +349,6 @@
         bq.appendChild(p);
       });
       fig.append(q);
-      if (rec.highlight) fig.appendChild(hl);
       fig.appendChild(bq);
       if (String(rec.text).length > 420) {
         bq.classList.add("is-clamped");
